@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHIVE LOOKBOOK</title>
+    <style>
+        /* 기본 스타일 및 폰트 설정 */
+        :root {
+            --bg-color: #ffffff; /* ZARA 스타일 화이트 */
+            --text-color: #000000;
+            --accent-color: #1a1a1a; /* Rick Owens 스타일 다크 포인트 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-transform: uppercase; /* 브랜드 특유의 정갈한 대문자 처리 */
+            letter-spacing: 0.1em;
+        }
+
+        /* 헤더: 고정 및 미니멀 디자인 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference; /* 배경색에 따라 글자색 반전 */
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            margin-left: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* 메인 그리드 레이아웃 */
+        main {
+            padding: 120px 20px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px; /* 자라 스타일의 좁은 간격 */
+        }
+
+        .look-item {
+            position: relative;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            aspect-ratio: 2 / 3; /* 세로가 긴 패션 화보 비율 */
+        }
+
+        .look-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .look-item:hover img {
+            transform: scale(1.05); /* 부드러운 확대 효과 */
+        }
+
+        .look-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .look-item:hover .look-info {
+            opacity: 1;
+        }
+
+        /* 반응형 설정 */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            main { grid-template-columns: 1fr 1fr; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><strong>ARCHIVE</strong></div>
+        <nav>
+            <a href="#">Collections</a>
+            <a href="#">Info</a>
+            <a href="#">Shop</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 반복되는 룩북 아이템 -->
+        <div class="look-item">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Look 01">
+            <div class="look-info">01 / SS26</div>
+        </div>
+        <div class="look-item">
+            <img src="https://images.unsplash.com/photo-1539109132314-34755249ff95?auto=format&fit=crop&w=800&q=80" alt="Look 02">
+            <div class="look-info">02 / SS26</div>
+        </div>
+        <div class="look-item">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Look 03">
+            <div class="look-info">03 / SS26</div>
+        </div>
+        <div class="look-item">
+            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=800&q=80" alt="Look 04">
+            <div class="look-info">04 / SS26</div>
+        </div>
+    </main>
+
+</body>
+</html>
